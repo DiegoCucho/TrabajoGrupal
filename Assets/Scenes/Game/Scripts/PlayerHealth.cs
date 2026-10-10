@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 /// <summary>
-/// Vida del buzo + barra de vida (se crea sola por codigo, abajo a la izquierda).
+/// Vida del buzo + barra de vida (se crea sola por codigo, abajo al centro).
 /// Se agrega automaticamente al objeto "Mermaid" desde GameBootstrap.
 /// </summary>
 public class PlayerHealth : MonoBehaviour
@@ -123,8 +123,9 @@ public class PlayerHealth : MonoBehaviour
         bgImg.sprite = RuntimeSprites.Square;
         bgImg.color = new Color(0f, 0f, 0f, 0.65f);
         RectTransform bgRt = bg.GetComponent<RectTransform>();
-        bgRt.anchorMin = bgRt.anchorMax = bgRt.pivot = new Vector2(0f, 0f);
-        bgRt.anchoredPosition = barMargin;
+        // abajo al centro (arriba ya estan el timer, la basura y los botones)
+        bgRt.anchorMin = bgRt.anchorMax = bgRt.pivot = new Vector2(0.5f, 0f);
+        bgRt.anchoredPosition = new Vector2(0f, barMargin.y);
         bgRt.sizeDelta = barSize;
 
         // Relleno (se vacia de derecha a izquierda)

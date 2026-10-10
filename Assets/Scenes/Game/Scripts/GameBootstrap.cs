@@ -2,15 +2,23 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 /// <summary>
-/// Se ejecuta solo al cargar la escena "Game": le agrega al buzo la vida y el ataque,
-/// y crea el generador de enemigos. No hace falta tocar la escena en el Inspector.
+/// Cada vez que se carga la escena "Game" (ya sea abriendola directo o entrando desde el Menu)
+/// le agrega al buzo la vida y el ataque, y crea el generador de enemigos.
+/// No hace falta tocar la escena en el Inspector.
 /// </summary>
 public static class GameBootstrap
 {
-    [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
-    private static void Init()
+    [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
+    private static void Register()
     {
-        if (SceneManager.GetActiveScene().name != "Game") return;
+        // se registra una sola vez al iniciar el juego y escucha TODAS las cargas de escena
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    private static void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        if (scene.name != "Game") return;
 
         GameObject player = GameObject.FindGameObjectWithTag("Mermaid");
         if (player == null)
@@ -26,5 +34,7 @@ public static class GameBootstrap
         {
             new GameObject("EnemySpawner").AddComponent<EnemySpawner>();
         }
+
+        Debug.Log("GameBootstrap: vida, ataque y enemigos activados.");
     }
 }
