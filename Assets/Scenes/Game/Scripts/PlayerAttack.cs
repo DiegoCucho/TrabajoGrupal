@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 /// <summary>
 /// Ataque del buzo: ESPACIO lanza un pulso de burbujas que golpea a los enemigos cercanos.
@@ -22,6 +23,18 @@ public class PlayerAttack : MonoBehaviour
         {
             nextAttack = Time.time + cooldown;
             Attack();
+        }
+    }
+
+    // Cuando haces clic en un boton de la UI (play, ?, casa) Unity lo deja "seleccionado" y
+    // luego ESPACIO lo vuelve a presionar (y las flechas/WASD navegan entre botones).
+    // Por eso al atacar te mandaba al menu o a los controles. Quitamos la seleccion cada frame.
+    private void LateUpdate()
+    {
+        EventSystem es = EventSystem.current;
+        if (es != null && es.currentSelectedGameObject != null)
+        {
+            es.SetSelectedGameObject(null);
         }
     }
 
