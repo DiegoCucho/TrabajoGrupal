@@ -15,6 +15,6 @@ public class TrashTextScript : MonoBehaviour
 
     void Update()
     {
-        text.text = $"Basura eliminada: {TrashItemCount}";
+        text.text = $"Basura eliminada: {TrashItemCount}/{GoalManager.Goal}";
     }
 }

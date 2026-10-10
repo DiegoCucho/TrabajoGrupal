@@ -12,18 +12,18 @@ public class EnemySpawner : MonoBehaviour
     [Header("Enemigos")]
     public Sprite enemySprite;          // opcional: dejar vacio para usar el enemigo generado
     public float enemyScale = 1.1f;
-    public int maxEnemies = 8;
+    public int maxEnemies = 3;
 
     [Header("Aparicion")]
-    public float firstDelay = 3f;
-    public float startInterval = 3f;     // segundos entre enemigos al inicio
-    public float minInterval = 1.2f;     // limite de rapidez
-    public float intervalDecrease = 0.05f; // cuanto baja el intervalo por cada enemigo
+    public float firstDelay = 8f;
+    public float startInterval = 7f;     // segundos entre enemigos al inicio
+    public float minInterval = 4f;       // limite de rapidez
+    public float intervalDecrease = 0.25f; // cuanto baja el intervalo por cada enemigo
     public float spawnMargin = 1.5f;     // que tan lejos del borde aparecen
 
     [Header("Dificultad")]
-    public float speedIncreasePerKill = 0.03f;
-    public float maxSpeed = 3.6f;
+    public float speedIncreasePerKill = 0.05f;
+    public float maxSpeed = 2.8f;
 
     private float currentInterval;
 

@@ -16,6 +16,7 @@ public class PlayerAttack : MonoBehaviour
     private void Update()
     {
         if (PlayerHealth.Instance != null && PlayerHealth.Instance.IsDead) return;
+        if (GoalManager.Instance != null && GoalManager.Instance.Won) return;
 
         if (Input.GetKeyDown(attackKey) && Time.time >= nextAttack)
         {

@@ -35,6 +35,11 @@ public static class GameBootstrap
             new GameObject("EnemySpawner").AddComponent<EnemySpawner>();
         }
 
-        Debug.Log("GameBootstrap: vida, ataque y enemigos activados.");
+        if (Object.FindObjectOfType<GoalManager>() == null)
+        {
+            new GameObject("GoalManager").AddComponent<GoalManager>();
+        }
+
+        Debug.Log("GameBootstrap: vida, ataque, enemigos y meta activados.");
     }
 }

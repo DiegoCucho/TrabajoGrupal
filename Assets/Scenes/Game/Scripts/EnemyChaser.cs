@@ -6,7 +6,7 @@ using UnityEngine;
 /// </summary>
 public class EnemyChaser : MonoBehaviour
 {
-    public float speed = 2.2f;
+    public float speed = 1.8f;
     public float damage = 10f;
     public int health = 2;
     public float knockbackTime = 0.35f;
