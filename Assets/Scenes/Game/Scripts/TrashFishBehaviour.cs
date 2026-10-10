@@ -154,6 +154,8 @@ public class TrashFishBehaviour : MonoBehaviour
         isEating = false;
         wayPoint = transform.position;
         TrashTextScript.TrashItemCount++;
+        // Recompensa: alimentar al pez cura al buzo
+        if (PlayerHealth.Instance != null) PlayerHealth.Instance.Heal(15f);
         canMove = true;
     }
 
