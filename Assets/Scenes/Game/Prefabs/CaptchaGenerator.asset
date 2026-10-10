@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fdf8bb0986a5db3459e9c795e1ca79fd, type: 3}
+  m_Name: CaptchaGenerator
+  m_EditorClassIdentifier: 
+  captchas:
+  - Image: {fileID: -607323078, guid: 6a610f260b687d64d83f8d3e9f7fe1c2, type: 3}
+    Value: 2mH65i
+  - Image: {fileID: 1624551285, guid: 6a610f260b687d64d83f8d3e9f7fe1c2, type: 3}
+    Value: 3ib3n9
+  - Image: {fileID: -1178179617, guid: 6a610f260b687d64d83f8d3e9f7fe1c2, type: 3}
+    Value: aFe3bx
+  - Image: {fileID: -835159395, guid: 6a610f260b687d64d83f8d3e9f7fe1c2, type: 3}
+    Value: mvi1nL
