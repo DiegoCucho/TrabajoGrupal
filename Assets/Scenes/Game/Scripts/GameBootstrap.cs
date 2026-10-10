@@ -18,6 +18,12 @@ public static class GameBootstrap
 
     private static void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
+        if (scene.name == "GameOver")
+        {
+            GameOverScreen.Setup();
+            return;
+        }
+
         if (scene.name != "Game") return;
 
         GameObject player = GameObject.FindGameObjectWithTag("Mermaid");

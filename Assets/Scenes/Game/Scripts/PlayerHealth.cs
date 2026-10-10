@@ -22,6 +22,9 @@ public class PlayerHealth : MonoBehaviour
     public float CurrentHealth { get; private set; }
     public bool IsDead { get; private set; }
 
+    // Para que la pantalla de Game Over sepa por que perdiste
+    public static bool DiedLastRun = false;
+
     private float invTimer;
     private SpriteRenderer[] renderers;
     private Color[] originalColors;
@@ -32,6 +35,7 @@ public class PlayerHealth : MonoBehaviour
     private void Awake()
     {
         Instance = this;
+        DiedLastRun = false;
         CurrentHealth = maxHealth;
 
         renderers = GetComponentsInChildren<SpriteRenderer>(true);
@@ -92,6 +96,7 @@ public class PlayerHealth : MonoBehaviour
     private IEnumerator Die()
     {
         IsDead = true;
+        DiedLastRun = true;
         RestoreColors();
 
         if (MermaidMovement.Instance != null) MermaidMovement.Instance.enabled = false;

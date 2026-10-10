@@ -63,10 +63,10 @@ public class GoalManager : MonoBehaviour
         Image dim = MakeImage("Dim", canvasGO.transform, new Color(0f, 0.08f, 0.15f, 0.8f));
         Stretch(dim.rectTransform);
 
-        MakeText("Titulo", canvasGO.transform, "¡GANASTE!", 120, new Color(1f, 0.92f, 0.3f),
+        MakeText("Titulo", canvasGO.transform, "¡WINNER!", 120, new Color(1f, 0.92f, 0.3f),
                  new Vector2(0f, 190f), new Vector2(1400f, 160f));
         MakeText("Subtitulo", canvasGO.transform,
-                 $"¡Salvaste el mar! Dieron de comer {TrashTextScript.TrashItemCount} basuras al pez.",
+                 $"¡Ganaste! Salvaste el mar con {TrashTextScript.TrashItemCount} basuras recogidas.",
                  44, Color.white, new Vector2(0f, 70f), new Vector2(1500f, 80f));
 
         MakeButton("BtnJugar", canvasGO.transform, "Jugar de nuevo", new Vector2(-230f, -90f),
